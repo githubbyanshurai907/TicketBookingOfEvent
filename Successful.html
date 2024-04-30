@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .success-message {
+            font-size: 24px;
+            color: #4CAF50; /* Green */
+        }
+        .ticket-info {
+            margin-top: 30px;
+            border: 2px solid #4CAF50; /* Green */
+            padding: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        .ticket-info h2 {
+            margin-bottom: 20px;
+            color: #4CAF50; /* Green */
+        }
+        .ticket-info p {
+            margin-bottom: 10px;
+        }
+        .ticket-info strong {
+            color: #555;
+        }
+        .return-button {
+            margin-top: 30px;
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="success-message">
+    <p>Payment Successful!</p>
+    <p>Thank you for your purchase.</p>
+</div>
+
+<div class="ticket-info">
+    <h2>Your Ticket Information</h2>
+    <p><strong>Ticket Type:</strong> General Admission</p>
+    <p><strong>Event Date:</strong> May 1, 2024</p>
+    <p><strong>Event Time:</strong> 7:00 PM</p>
+    <p><strong>Location:</strong> Example Venue</p>
+    <p><strong>Seat Number:</strong> A12</p>
+</div>
+
+<button class="return-button" onclick="window.location.href = 'index.html';">Return to Home Page</button>
+
+</body>
+</html>
+

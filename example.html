@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Seat Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .stage {
+            display: block;
+            margin: 20px auto;
+            width: 400px;
+            height: 50px;
+            background-color: #ccc;
+            border-radius: 5px;
+        }
+
+        .seats-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .seat {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ccc;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #dce4c6; /* Yellow */
+            transition: background-color 0.3s ease;
+        }
+
+        .seat.selected {
+            background-color: #0c5d75; /* Tomato */
+        }
+
+        .book-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4682b4; /* Steel Blue */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-btn:hover {
+            background-color: #4169e1; /* Royal Blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Seat Booking</h1>
+        <div class="stage"></div>
+        <div class="seats-container" id="seats-container"></div>
+        <button class="book-btn" id="book-btn">Book Selected Seats</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const seatsContainer = document.getElementById("seats-container");
+            const bookButton = document.getElementById("book-btn");
+            const seats = [];
+
+            // Create seats
+            for (let i = 1; i <= 50; i++) {
+                const seat = document.createElement("div");
+                seat.classList.add("seat");
+                seat.textContent = i;
+                seat.addEventListener("click", () => {
+                    seat.classList.toggle("selected");
+                    const index = seats.indexOf(seat.textContent);
+                    if (index === -1) {
+                        seats.push(seat.textContent);
+                    } else {
+                        seats.splice(index, 1);
+                    }
+                });
+                seatsContainer.appendChild(seat);
+            }
+
+            // Book selected seats
+            bookButton.addEventListener("click", () => {
+                if (seats.length > 0) {
+                    // Redirect to the next page
+                    window.location.href = "nextpage.html";
+                } else {
+                    alert("Please select at least one seat to book.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
